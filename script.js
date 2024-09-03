@@ -23,11 +23,11 @@ function displayCreditCards(data) {
             <div class="card-details">
                 <div class="card-detail">
                     <strong>Card Number</strong>
-                    <span>${maskCardNumber(card.credit_card_number)}</span>
+                    <span>${card.credit_card_number}</span> <!-- Unmasked -->
                 </div>
                 <div class="card-detail">
                     <strong>CVV</strong>
-                    <span>***</span>
+                    <span>${card.cvv}</span> <!-- Unmasked -->
                 </div>
                 <div class="card-detail">
                     <strong>Expiry Date</strong>
@@ -42,10 +42,6 @@ function displayCreditCards(data) {
         
         container.appendChild(cardElement);
     });
-}
-
-function maskCardNumber(number) {
-    return 'XXXX-XXXX-XXXX-' + number.slice(-4);
 }
 
 function getNetworkIcon(network) {
